@@ -3,6 +3,7 @@
 import sys
 import subprocess
 import random
+import time
 
 def get_selection(lower_bound, upper_bound) -> int:
     selection = random.randint(lower_bound, upper_bound)
@@ -17,8 +18,14 @@ def get_selection(lower_bound, upper_bound) -> int:
     return selection
 
 selection = get_selection(0, 2)
+path = sys.path[0] + '/resources/'
 
-#subprocess.run(["./train_animation"])
-print(selection)
+if selection == 0:
+    subprocess.run([path + "0_train_animation"])
+else:
+    print(selection)
+
+    # timer to preserve the original intent of punishing the user
+    time.sleep(1.5)
 
 
