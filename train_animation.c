@@ -41,7 +41,7 @@
 #include <curses.h>
 #include <signal.h>
 #include <unistd.h>
-#include "sl.h"
+#include "train_animation.h"
 
 void add_smoke(int y, int x);
 void add_man(int y, int x);
