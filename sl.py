@@ -23,10 +23,9 @@ path = sys.path[0] + '/resources/'
 if selection == 0:
     subprocess.run([path + "0_train_animation"])
 else:
-    print(selection)
     with open(path + str(selection) + "_train.txt", "r") as train:
         for line in train.readlines():
-            print(line)
+            print(line, end="")
 
     # timer to preserve the original intent of punishing the user
     time.sleep(1.5)
