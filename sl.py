@@ -18,7 +18,7 @@ def get_selection(lower_bound, upper_bound) -> int:
     return selection
 
 selection = get_selection(0, 2)
-path = sys.path[0] + '/resources/'
+path = '/usr/share/sl/'
 
 if selection == 0:
     subprocess.run([path + "0_train_animation"])
