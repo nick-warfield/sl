@@ -1,0 +1,9 @@
+Package: sl
+Version: 0.1
+Architecture: all
+Maintainer: Nicholas Warfield, nick@nkwarfield.io
+Installed-Size: 42
+Depends: python
+Section: python
+Priority: optional
+Description: Punish mistyped 'ls' with trains

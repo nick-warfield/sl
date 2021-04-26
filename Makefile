@@ -1,20 +1,21 @@
-#==========================================
-#    Makefile: makefile for sl 5.1
-#	Copyright 1993, 1998, 2014
-#                 Toyoda Masashi
-#		  (mtoyoda@acm.org)
-#	Last Modified: 2014/03/31
-#==========================================
-
+BINARY_NAME = sl
 CC=gcc
 CFLAGS=-O -Wall
 
-all: train_animation
+PACKAGE_DIR = pkg
+ART_DIR = share
 
-train_animation: train_animation.c train_animation.h
-	$(CC) $(CFLAGS) -o train_animation train_animation.c -lncurses
+sl: train_animation.c train_animation.h
+	$(CC) $(CFLAGS) -o $(ART_DIR)/0_train_animation train_animation.c -lncurses
 
+.PHONY: run clean test all
 clean:
-	rm -f train_animation
+	rm -f share/0_train_animation
+	rm -f sl_0.1*
 
-distclean: clean
+package:
+	rm -rf $(PACKAGE_DIR)
+	mkdir -p $(PACKAGE_DIR)
+	cd sl && dpkg-buildpackage -uc -us
+	mv sl_0.1* pkg/
+

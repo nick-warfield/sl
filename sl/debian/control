@@ -1,0 +1,11 @@
+Source: sl
+Section: python
+Priority: optional
+Maintainer: Nicholas Warfield, nick@nkwarfield.io
+Standards-Version: 4.5.1
+Rules-Requires-Root: no
+
+Package: sl
+Architecture: all
+Depends: python
+Description: Punish mistyped 'ls' with trains
